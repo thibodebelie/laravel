@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%; 
+    margin: auto;
+    max-width: 800px; 
+}
+
+.container h1 {
+    font-size: min(4vw,45px); 
+    color: #38AD34;
+    text-shadow: #81b47f 2px 2px 2px;
+    margin: 0;
+    padding: 0;
+}
+
+.mini-Min {
+    max-width: 400px;
+    max-height:300px ;
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    margin-top: 2vw; 
+    margin-bottom: 4vw; 
+    cursor: pointer;
+}
+
+.mini-Min a {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+}
+
+.mini-Min .image-box {
+    width: 100%;
+    height: auto; 
+    border-radius: inherit;
+}
+
+.mini-Min .image-box img {
+    max-width: 400px;
+    max-height:300px ;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
+}
+
+.mini-Min::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgb(233, 43, 43);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.mini-Min:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.mini-Min:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.content {
+    width: 80%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+}
+
+.mini-Min:hover .content {
+    opacity: 1;
+    color: #38AD34;
+    transition: 0.5s ease-in-out;
+}
+
+.container h1 a{
+    text-decoration: none;
+    color: #38AD34;
+}
+.container h1 a:hover{
+    text-decoration: underline;
+    color: rgb(233, 43, 43);
+    transition: 0.3s ease-in-out;
+}
+
+.container .plussers {
+    font-size: min(2.5vw, 35px); 
+    color: #4b4c4d; 
+    margin: 0px;
+}
