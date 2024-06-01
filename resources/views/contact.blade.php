@@ -8,8 +8,12 @@
     <!-- Tailwind css  --> 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
+
 </head>
 <body>
+    <script src="{{ asset('public\contact.js') }}"></script>
+
+    
     @include('./components/header')
 
     <div class=" text-gray-700 ml-24">
@@ -24,7 +28,7 @@
             </div>
         </div>
          
-        <form action="/create-question" method="POST" class="flex flex-col space-y-4 w-4/5 mt-12 mb-10"> 
+        <form action="/create-question" method="POST" onsubmit="validateForm();" class="flex flex-col space-y-4 w-4/5 mt-12 mb-10"> 
             @csrf
             <label for="naam" class="font-bold">Naam:</label>
             <input type="text" name="name" id="naam" pattern="[a-zA-Z ]+" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={naamInput}>
@@ -47,7 +51,22 @@
         </form>
     </div>
 
+    @if ($errors->any())
+    <div class="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-900 flex justify-center items-center z-50">
+        <div id="validationAlert" class="bg-white rounded-lg shadow-md px-8 py-6">
+          <h5 class="text-xl font-bold leading-tight text-center text-red-500">Vul alle velden in:</h5>
+          <ul class="mt-3 list-disc ml-4">
+            @foreach ($errors->all() as $error)
+              <li class="text-red-500">{{ $error }}</li>
+            @endforeach
+          </ul>
+          <button type="button" id="closeButton" onclick="closeAlert();" class="mt-4 px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-red-500">Sluiten</button>        </div>
+      </div>
+    @endif
+
     
     @include('./components/footer')
+
+    <script type="text/javascript" src="{{ URL::asset('contact.js') }}"></script>
 </body>
 </html>

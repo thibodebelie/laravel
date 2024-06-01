@@ -10,26 +10,23 @@
 <body>
     @include('./components/header')
 
-    <h1 class="text-4xl font-bold text-center mb-6">Log in</h1>
-<form method="POST" action="?/login" use:enhance class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-	<div class="mb-4">
-		<label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-			E-mail
-		</label>
-		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" />
-	</div>
-	<div class="mb-6">
-		<label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-			Password
-		</label>
-		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" />
-	</div>
-	<div class="flex items-center justify-between">
-		<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-			Login
-		</button>
-	</div>
-</form>
+	<body class="bg-gray-100">
+		<div class="flex items-center justify-center h-screen">
+			<form class="w-full max-w-md bg-white shadow-md rounded-lg border-2 border-greenNav p-6" action="?/login" method="POST">
+				<h1 class="text-greenNav font-bold pb-3 text-2xl">Log in</h1>
+				<div class="mb-4">
+					<label for="email" class="block text-gray-700 font-semibold mb-2">E-mail</label>
+					<input type="email" id="email" name="email" placeholder="E-mail" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-greenNav">
+				</div>
+				<div class="mb-4">
+					<label for="password" class="block text-gray-700 font-semibold mb-2">Wachtwoord</label>
+					<input type="password" id="password" name="password" placeholder="Wachtwoord" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-greenNav">
+				</div>
+				<button type="submit" class="w-full bg-greenNav hover:bg-greenNav text-white hover:text-redKLJ font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:border-greenNav">Login</button>
+			</form>
+		</div>
+
+	</body>
 
 
     @include('./components/footer')

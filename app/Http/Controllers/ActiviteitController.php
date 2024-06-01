@@ -32,7 +32,6 @@ class ActiviteitController extends Controller
         Activiteit::create($incomingFields);
         
 
-
         return redirect('/');
     }
 

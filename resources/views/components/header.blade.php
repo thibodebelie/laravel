@@ -44,7 +44,7 @@
                     <li><a href="../documenten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
                     <li><a href="../activiteiten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
                     <li><a href="../toevoegen" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                    <li><a href="../logup" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Logup</a></li>
+                    <li><a href="../logup" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Signup</a></li>
                     <li><a href="../logout" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
                   </ul>
                 </li>
@@ -79,7 +79,7 @@
                 <li><a href="../documenten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
                 <li><a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
                 <li><a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                <li><a href="../logup" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Lopup</a></li>
+                <li><a href="../signup" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
                 <li><a href="../logout" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
             </ul>
         </li>

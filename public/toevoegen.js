@@ -1,0 +1,51 @@
+function validateForm(){
+    document.getElementById('activiteitForm').addEventListener('submit', function(event) {
+        const datumInput = document.getElementById('datum');
+        const beginInput = document.getElementById('begin');
+        const eindeInput = document.getElementById('einde');
+        const activiteitInput = document.getElementById('activiteit');
+        const locatieInput = document.getElementById('locatie');
+        const groepSelect = document.getElementById('groep');
+      
+        let isEmptyField = false;
+      
+        if (datumInput.value === '') {
+    
+          alert('Geef de datum van de activiteit mee.');
+          isEmptyField = true;
+        }
+        if (beginInput.value === '') {
+          alert('Geef het beginuur mee.');
+          isEmptyField = true;
+        }
+        if (eindeInput.value === '') {
+          alert('Geef het einduur mee.');
+          isEmptyField = true;
+        }
+        if (activiteitInput.value === '') {
+          alert('Geef de beschrijving van de activiteit mee.');
+          isEmptyField = true;
+        }
+        if (locatieInput.value === '') {
+          alert('Geef een locatie mee.');
+          isEmptyField = true;
+        }
+        if (groepSelect.value === '') {
+          alert('Selecteer een groep.');
+          isEmptyField = true;
+        }
+      
+        if (isEmptyField) {
+          event.preventDefault(); // Stops form submission
+          return false;
+        }
+      });
+}
+
+function closeAlert() {
+    const validationAlert = document.getElementById('validationAlert');
+    validationAlert.style.display = 'none';
+    location.reload();
+}
+
+document.getElementById('closeButton').addEventListener('click', closeAlert);
