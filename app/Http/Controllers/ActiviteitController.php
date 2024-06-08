@@ -47,6 +47,18 @@ class ActiviteitController extends Controller
             return redirect('/')->with('error','Probleem met het verwijderen, probeer opnieuw');
         }
     }
+    public function updateActiviteit(Request $request){
+        $id =$request->input('id');
+        $activiteits = Activiteit::find($id);
+        if($activiteits){
+            $activiteits->update($request->all());
+            return redirect('/')->with('success','Succesvol bijgewerkt');
+        }else
+        {
+            return redirect('/')->with('error','Probleem met het bijwerken van de activiteit, probeer opnieuw');
+        }
+
+    }
 
     public function showActiviteiten()
     {

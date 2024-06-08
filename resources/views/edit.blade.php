@@ -12,7 +12,9 @@
 
     <div class="flex flex-col items-center justify-center mb-32 mt-10">
         <h1 class="text-redKLJ text-2xl font-semibold mb-3">Veranderen van een activiteit</h1>
-    <form >
+    <form action="/update-activiteit">
+        @csrf
+        @method ('PUT')
         <input type="text" name="id" placeholder="Id" bind:value={idInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
         <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
         <input type="time"  name="begin"        placeholder="Beginuur"      bind:value={beginInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">

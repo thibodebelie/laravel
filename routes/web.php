@@ -94,7 +94,7 @@ Route::post('/create-activiteit', [ActiviteitController::class, 'createActivitei
 Route::get('/activiteiten', [ActiviteitController::class, 'showActiviteiten']);
 Route::get('/activiteiten/{groep}', [ActiviteitController::class, 'showActiviteiten']);
 Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
-
+Route::update('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
 
 
 
