@@ -64,6 +64,10 @@ Route::get('/vragen', function () {
     return view('vragen');
 });
 
+Route::get('/edit', function () {
+    return view('edit');
+});
+
 
 
 
@@ -89,6 +93,8 @@ Route::get('/show-pdf-medische', function () {
 Route::post('/create-activiteit', [ActiviteitController::class, 'createActiviteit']);
 Route::get('/activiteiten', [ActiviteitController::class, 'showActiviteiten']);
 Route::get('/activiteiten/{groep}', [ActiviteitController::class, 'showActiviteiten']);
+Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
+
 
 
 

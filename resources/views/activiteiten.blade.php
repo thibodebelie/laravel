@@ -12,13 +12,15 @@
     @include('./components/header')
     <div class="flex flex-col items-center justify-center p-4 p"> 
         <p class="pb-3">Verwijder één van de onderstaande activiteiten aan de hand van de id.</p>
-        <div class="flex flex-col items-center space-y-4">
-            <input type="number" bind:value={providedId} placeholder="Id van de activiteit" 
-              class="border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 bg-greenNav placeholder-white" />
+        <form action="/delete-activiteit" method="POST" class="flex flex-col items-center space-y-4">
+            @csrf
+            @method('DELETE')
+            <input type="number" name="id" placeholder="Id van de activiteit" 
+                class="border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 bg-greenNav placeholder-white" />
             <button class="text-greenNav hover:text-white border border-greenNav hover:bg-greenNav  font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 dark:border-greenNav dark:text-greenNav dark:hover:text-white dark:hover:bg-greenNav items-center">
                 <span>Verwijder</span>
             </button>
-        </div>
+        </form>
     </div>
 
     @foreach ($groupedActiviteits as $groep => $activiteits)
@@ -41,6 +43,8 @@
                 <p class="m-1 border-2 rounded-md pl-1 p-2  border-greenKLJ">Activiteit: {{ $activiteit->activiteit }}</p>
                 <p class="w-full m-3">Locatie: {{ $activiteit->locatie }}</p>
                 <p class="w-full ml-3">Id: {{ $activiteit->id }}</p>
+                
+                <a href="../edit" class="ml-3 pt-3 underline text-blue-700">Edit</a>
             </li>
         @endforeach
     </ul>

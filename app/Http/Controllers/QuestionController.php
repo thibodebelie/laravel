@@ -40,10 +40,10 @@ class QuestionController extends Controller
         if($question)
         {
             $question->delete();
-            return redirect('/')->with('success','Succesfull delete'); 
+            return redirect('/')->with('success','Succesvol verwijderd'); 
         } else
         {
-            return redirect('/')->with('error','Error while deleting');
+            return redirect('/')->with('error','Probleem met het verwijderen, probeer opnieuw');
         }
     }
 

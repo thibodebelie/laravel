@@ -11,7 +11,6 @@
 
 </head>
 <body>
-    <script src="{{ asset('public\contact.js') }}"></script>
 
     
     @include('./components/header')
@@ -54,13 +53,14 @@
     @if ($errors->any())
     <div class="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-900 flex justify-center items-center z-50">
         <div id="validationAlert" class="bg-white rounded-lg shadow-md px-8 py-6">
-          <h5 class="text-xl font-bold leading-tight text-center text-red-500">Vul alle velden in:</h5>
+          <h5 class="text-xl font-bold leading-tight text-center text-redKLJ">Vul alle velden in:</h5>
           <ul class="mt-3 list-disc ml-4">
             @foreach ($errors->all() as $error)
-              <li class="text-red-500">{{ $error }}</li>
+              <li class="text-redKLJ">{{ $error }}</li>
             @endforeach
           </ul>
-          <button type="button" id="closeButton" onclick="closeAlert();" class="mt-4 px-4 py-2 rounded-md text-sm font-medium bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-red-500">Sluiten</button>        </div>
+          <button type="button" id="closeButton" onclick="closeAlert();" class="mt-4 px-4 py-2 rounded-md text-sm font-medium bg-greenNav text-white hover:bg-redKLJ focus:outline-none focus:ring focus:ring-offset-2 focus:ring-redKLJ">Sluiten</button>
+        </div>
       </div>
     @endif
 
