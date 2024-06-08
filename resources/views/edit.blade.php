@@ -12,7 +12,7 @@
 
     <div class="flex flex-col items-center justify-center mb-32 mt-10">
         <h1 class="text-redKLJ text-2xl font-semibold mb-3">Veranderen van een activiteit</h1>
-    <form action="/update-activiteit">
+    <form action="/update-activiteit" method="POST">
         @csrf
         @method ('PUT')
         <input type="text" name="id" placeholder="Id" bind:value={idInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
@@ -28,7 +28,7 @@
             <option value="Hoofdleiding">Hoofdleiding</option>
         </select>
         {{-- on:click={()=>updateActiviteit()} on:click={()=>validateForm()}  --}}
-        <button  class="w-10/12 border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5 ml-4">Activiteit Updaten</button> <br/>
+        <button type="submit" class="w-10/12 border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5 ml-4">Activiteit Updaten</button> <br/>
     </form>
     </div>
     @include('./components/footer')
