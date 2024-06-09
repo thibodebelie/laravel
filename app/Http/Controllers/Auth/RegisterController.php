@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        $role = Role::firstOrCreate(['name' => 'lid']);
         $user->assignRole('lid');
         return $user;
     }

@@ -8,16 +8,13 @@ use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\ActiviteitController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use Spatie\Permission\Models\Role;
 
  
 
 Route::get('/', function () {
     return view('home');
 });
-
-// Route::get('/activiteiten', function () {
-//     return view('activiteiten');
-// });
 
 Route::get('/contact', function () {
     return view('contact');
@@ -30,11 +27,6 @@ Route::get('/documenten', function () {
 Route::get('/hoofdleiding', function () {
     return view('hoofdleiding');
 });
-
-Route::get('/inschrijven', function () {
-    return view('inschrijven');
-});
-
 
 Route::get('/leiding', function () {
     return view('leiding');
@@ -62,22 +54,14 @@ Route::get('/miniMin', function () {
 Route::get('/tussers', function () {
     return view('tussers');
 });
-// Route::get('/toevoegen', function () {
-//     return view('toevoegen');
-// });
-// Route::get('/vragen', function () {
-//     return view('vragen');
-// });
-
-// Route::get('/edit', function () {
-//     return view('edit');
-// });
 
 // Beveiligde routes
+
+//lid
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/activiteiten', function () {
-        return view('activiteiten');
-    });
+    // Route::get('/activiteiten', function () {
+    //     return view('activiteiten');
+    // });
     Route::get('/toevoegen', function () {
         return view('toevoegen');
     });
@@ -87,7 +71,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/edit', function () {
         return view('edit');
     });
+    
+    Route::get('/inschrijven', function () {
+        return view('inschrijven');
+    });
+    Route::post('/create-activiteit', [ActiviteitController::class, 'createActiviteit']);
+    Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
+    Route::put('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
+    Route::get('/vragen', [QuestionController::class, 'showQuestions']);
+    Route::delete('/delete-question', [QuestionController::class, 'deleteQuestion']);
 });
+//Leiding
 
 
 
@@ -110,17 +104,11 @@ Route::get('/show-pdf-medische', function () {
 });
 
 
-Route::post('/create-activiteit', [ActiviteitController::class, 'createActiviteit']);
+
 Route::get('/activiteiten', [ActiviteitController::class, 'showActiviteiten']);
 Route::get('/activiteiten/{groep}', [ActiviteitController::class, 'showActiviteiten']);
-Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
-Route::put('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
-
-
 
 Route::post('/create-question', [QuestionController::class, 'createQuestion']);
-Route::get('/vragen', [QuestionController::class, 'showQuestions']);
-Route::delete('/delete-question', [QuestionController::class, 'deleteQuestion']);
 
 
 Route::get('/miniMin', [ActiviteitController::class, 'showMiniMin']);
@@ -132,11 +120,4 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-//Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Authenticator
-//Route::post('/register', [RegisterController::class, 'register']);
 
