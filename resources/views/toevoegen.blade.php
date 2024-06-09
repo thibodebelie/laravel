@@ -43,7 +43,6 @@
         </div>
       </div>
     @endif
-    
 
 
     @include('./components/footer')

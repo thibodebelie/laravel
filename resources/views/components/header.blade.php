@@ -38,10 +38,8 @@
                     </svg>
                 </button>
             </div>
-            <!-- Dropdown menu, show/hide based on menu state. -->
             <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <div class="py-1" role="none">
-                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                     <a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Toevoegen</a>
                     <a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Activiteiten</a>
                     <a href="../groepen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Groepen</a>
