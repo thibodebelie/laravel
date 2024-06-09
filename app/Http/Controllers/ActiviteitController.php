@@ -55,7 +55,7 @@ class ActiviteitController extends Controller
             return redirect('/')->with('success','Succesvol bijgewerkt');
         }else
         {
-            return redirect('/')->with('error','Probleem met het bijwerken van de activiteit, probeer opnieuw');
+            return redirect('/edit')->with('error','Probleem met het bijwerken van de activiteit, probeer opnieuw');
         }
 
     }

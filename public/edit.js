@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    validateForm();
+    document.getElementById('closeButton').addEventListener('click', closeAlert);
+});
+
 function validateForm(){
     document.getElementById('activiteitForm').addEventListener('submit', function(event) {
         const datumInput = document.getElementById('datum');
@@ -6,6 +11,7 @@ function validateForm(){
         const activiteitInput = document.getElementById('activiteit');
         const locatieInput = document.getElementById('locatie');
         const groepSelect = document.getElementById('groep');
+        const idInput = document.getElementById('id');
       
         let isEmptyField = false;
       
@@ -34,12 +40,16 @@ function validateForm(){
           alert('Selecteer een groep.');
           isEmptyField = true;
         }
+        if (idInput.value === '') {
+            alert('Geef een id mee.');
+            isEmptyField = true;
+          }
       
         if (isEmptyField) {
           event.preventDefault();
           return false;
         }
-      });
+    });
 }
 
 function closeAlert() {
@@ -48,4 +58,4 @@ function closeAlert() {
     location.reload();
 }
 
-document.getElementById('closeButton').addEventListener('click', closeAlert);
+document.getElementById('editForm').addEventListener('click', closeAlert);

@@ -12,26 +12,27 @@
 
     <div class="flex flex-col items-center justify-center mb-32 mt-10">
         <h1 class="text-redKLJ text-2xl font-semibold mb-3">Veranderen van een activiteit</h1>
-    <form action="/update-activiteit" method="POST">
-        @csrf
-        @method ('PUT')
-        <input type="text" name="id" placeholder="Id" bind:value={idInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <input type="time"  name="begin"        placeholder="Beginuur"      bind:value={beginInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <input type="time"  name="einde"        placeholder="Einduur"       bind:value={eindeInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <input type="text"  name="activiteit"   placeholder="Activiteit"    bind:value={activiteitInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <input type="text"  name="locatie"      placeholder="Locatie"       bind:value={locatieInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
-        <select bind:value={groepInput} class="w-10/12 px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white mb-5 ml-4">
-            <option value="Mini-Min">Mini-Min</option>
-            <option value="Maxi-Min">Maxi-Min</option>
-            <option value="Tussers">Tussers</option>
-            <option value="Hoofdleiding">Hoofdleiding</option>
-        </select>
-        {{-- on:click={()=>updateActiviteit()} on:click={()=>validateForm()}  --}}
-        <button type="submit" class="w-10/12 border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5 ml-4">Activiteit Updaten</button> <br/>
-    </form>
+        <form action="/update-activiteit" method="POST" id="activiteitForm">
+            @csrf
+            @method ('PUT')
+            <input type="text"  name="id"           placeholder="Id"            class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="id">
+            <input type="date"  name="datum"        placeholder="Datum"         class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="datum">
+            <input type="time"  name="begin"        placeholder="Beginuur"      class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="begin">
+            <input type="time"  name="einde"        placeholder="Einduur"       class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="einde">
+            <input type="text"  name="activiteit"   placeholder="Activiteit"    class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="activiteit">
+            <input type="text"  name="locatie"      placeholder="Locatie"       class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4" id="locatie">
+            <select name="groep" class="w-10/12 px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white mb-5 ml-4" id="groep">
+                <option value="Mini-Min">Mini-Min</option>
+                <option value="Maxi-Min">Maxi-Min</option>
+                <option value="Tussers">Tussers</option>
+                <option value="Hoofdleiding">Hoofdleiding</option>
+            </select>
+            <button class="w-10/12 border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5 ml-4">Activiteit Updaten</button>
+        </form>
+        
     </div>
-    @include('./components/footer')
 
+    @include('./components/footer')
+    <script type="text/javascript" src="{{ URL::asset('edit.js') }}"></script>
 </body>
 </html>
