@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\ActiviteitController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
  
 
 Route::get('/', function () {
@@ -36,15 +40,15 @@ Route::get('/leiding', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 });
 
 Route::get('/logout', function () {
     return view('logout');
 });
 
-Route::get('/signup', function () {
-    return view('signup');
+Route::get('/register', function () {
+    return view('auth.register');
 });
 
 Route::get('/maxiMin', function () {
@@ -67,7 +71,6 @@ Route::get('/vragen', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
-
 
 
 
@@ -108,8 +111,15 @@ Route::get('/maxiMin', [ActiviteitController::class, 'showMaxiMin']);
 Route::get('/tussers', [ActiviteitController::class, 'showTussers']);
 Route::get('/hoofdleiding', [ActiviteitController::class, 'showHoofdleiding']);
 
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-// Auth::routes();
+//Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Authenticator
+//Route::post('/register', [RegisterController::class, 'register']);
+

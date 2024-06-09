@@ -16,9 +16,15 @@
         <span class="self-center text-l font-semibold whitespace-nowrap dark:text-white hover:dark:text-greenKLJ">KLJ Meisjes Hamont</span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <a href="../login">
-        <button type="button" class="text-white bg-redKLJ hover:bg-greenNav hover:border-2 hover:border-redKLJ focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-redKLJ dark:hover:redKLJ dark:focus:ring-redKLJ">Login</button>
-        </a>
+      @if(Auth::check())
+      <a href="{{ route('logout') }}">
+          <button type="button" class="text-white bg-redKLJ hover:bg-greenNav hover:border-2 hover:border-redKLJ focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-redKLJ dark:hover:redKLJ dark:focus:ring-redKLJ">Logout</button>
+      </a>
+      @else
+      <a href="{{ route('login') }}">
+          <button type="button" class="text-white bg-redKLJ hover:bg-greenNav hover:border-2 hover:border-redKLJ focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-redKLJ dark:hover:redKLJ dark:focus:ring-redKLJ">Login</button>
+      </a>
+      @endif
         
         <div class="flex justify-end">
           <div class="relative inline-block text-left">
@@ -31,26 +37,7 @@
               </button>
             </div>
         
-            <!-- {#if isOpen}
-            <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-greenNav ring-1 ring-black ring-opacity-5 z-1000">
-              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                <a href="../leiding" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Groepen</a>
-                <a href="../kamp" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Kamp</a>
-                <a href="../inschrijven" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Inschrijven Kamp </a>
-                <a href="../contact" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Contact</a>
-                <li class="relative group list-none">
-                  <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Meer</a>
-                  <ul class="absolute left-0 w-48 mt-0 space-y-2 bg-greenNav rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
-                    <li><a href="../documenten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
-                    <li><a href="../activiteiten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
-                    <li><a href="../toevoegen" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                    <li><a href="../logup" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Signup</a></li>
-                    <li><a href="../logout" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
-                  </ul>
-                </li>
-              </div>
-            </div>
-            {/if} -->
+        
             
           </div>
         </div>
@@ -79,7 +66,7 @@
                 <li><a href="../documenten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
                 <li><a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
                 <li><a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                <li><a href="../signup" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
+                <li><a href="../register" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
                 <li><a href="../logout" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
             </ul>
         </li>
