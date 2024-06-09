@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Auth; 
 use App\Models\Activiteit;
 use Illuminate\Http\Request;
 
 class ActiviteitController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function createActiviteit(Request $request){
         $incomingFields = $request->validate([

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\Auth\HomeController;
@@ -14,9 +15,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/activiteiten', function () {
-    return view('activiteiten');
-});
+// Route::get('/activiteiten', function () {
+//     return view('activiteiten');
+// });
 
 Route::get('/contact', function () {
     return view('contact');
@@ -58,18 +59,34 @@ Route::get('/maxiMin', function () {
 Route::get('/miniMin', function () {
     return view('miniMin');
 });
-Route::get('/toevoegen', function () {
-    return view('toevoegen');
-});
 Route::get('/tussers', function () {
     return view('tussers');
 });
-Route::get('/vragen', function () {
-    return view('vragen');
-});
+// Route::get('/toevoegen', function () {
+//     return view('toevoegen');
+// });
+// Route::get('/vragen', function () {
+//     return view('vragen');
+// });
 
-Route::get('/edit', function () {
-    return view('edit');
+// Route::get('/edit', function () {
+//     return view('edit');
+// });
+
+// Beveiligde routes
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/activiteiten', function () {
+        return view('activiteiten');
+    });
+    Route::get('/toevoegen', function () {
+        return view('toevoegen');
+    });
+    Route::get('/vragen', function () {
+        return view('vragen');
+    });
+    Route::get('/edit', function () {
+        return view('edit');
+    });
 });
 
 

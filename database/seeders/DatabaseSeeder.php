@@ -11,6 +11,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Activiteit::factory()->count(50)->create();
+        // Verschil tussen leider en lid
+        $lidRole = Role::create(['name' => 'lid']);
+        $leiderRole = Role::create(['name' => 'leider']);
+
+        // Leider handmatig aangemaakt
+        $leider = User::create([
+            'name' => 'Admin',
+            'email' => 'admin.admin@admin.com',
+            'password' => Hash::make('adminadmin'),
+        ]);
+
+        // Admin is leider, toegang tot alles ==> handmatig
+        $leider->roles()->attach($leiderRole);
     }
 }
