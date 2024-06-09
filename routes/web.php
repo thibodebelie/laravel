@@ -109,3 +109,7 @@ Route::get('/tussers', [ActiviteitController::class, 'showTussers']);
 Route::get('/hoofdleiding', [ActiviteitController::class, 'showHoofdleiding']);
 
 
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
