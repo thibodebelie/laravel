@@ -104,37 +104,6 @@
       </div>
       @endif
 
-    {{-- <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-greenNav bg-greenNav md:dark:bg-greenNav dark:border-gray-700">
-        <li>
-          <a href="../leiding" class="block py-2 px-3 md:p-0 text-white bg-redKLJ rounded md:bg-transparent md:text-redKLJ md:dark:text-redKLJ" aria-current="page">Groepen</a>
-        </li>
-        <li class="relative group br-greenNav" >
-            <a href="../kamp" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-redKLJ md:dark:hover:text-redKLJ dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Kamp</a>
-            <ul class="absolute left-0 w-48 mt-0 space-y-2 bg-greenNav text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
-                <li><a href="../kamp" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Info</a></li>
-                <li><a href="../inschrijven" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Inschrijven</a></li>
-
-            </ul>
-        </li>
-        <li>
-          <a href="../contact" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-redKLJ md:dark:hover:text-redKLJ dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-        </li>
-        
-        <li class="relative group">
-            <a href="" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-redKLJ md:dark:hover:text-redKLJ dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Meer</a>
-            <ul class="absolute left-0 w-48 mt-0 space-y-2 bg-greenNav text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
-                <li><a href="../documenten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
-                <li><a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
-                <li><a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                <li><a href="../register" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
-                <li><a href="../logout" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
-            </ul>
-        </li>
-
-        
-      </ul>
-    </div> --}}
     </div>
   </nav>
 </body>

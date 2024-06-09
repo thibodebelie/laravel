@@ -24,10 +24,6 @@ Route::get('/documenten', function () {
     return view('documenten');
 });
 
-Route::get('/hoofdleiding', function () {
-    return view('hoofdleiding');
-});
-
 Route::get('/leiding', function () {
     return view('leiding');
 });
@@ -44,24 +40,27 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/maxiMin', function () {
-    return view('maxiMin');
-});
-
-Route::get('/miniMin', function () {
-    return view('miniMin');
-});
-Route::get('/tussers', function () {
-    return view('tussers');
-});
-
 // Beveiligde routes
 
 //lid
 Route::group(['middleware' => ['auth']], function () {
-    // Route::get('/activiteiten', function () {
-    //     return view('activiteiten');
-    // });
+    Route::get('/activiteiten', function () {
+         return view('activiteiten');
+    });
+
+    Route::get('/maxiMin', function () {
+        return view('maxiMin');
+    });
+    Route::get('/miniMin', function () {
+        return view('miniMin');
+    });
+    Route::get('/tussers', function () {
+        return view('tussers');
+    });
+    Route::get('/hoofdleiding', function () {
+        return view('hoofdleiding');
+    });
+
     Route::get('/toevoegen', function () {
         return view('toevoegen');
     });
@@ -75,9 +74,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/inschrijven', function () {
         return view('inschrijven');
     });
-    Route::post('/create-activiteit', [ActiviteitController::class, 'createActiviteit']);
-    Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
-    Route::put('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
     Route::get('/vragen', [QuestionController::class, 'showQuestions']);
     Route::delete('/delete-question', [QuestionController::class, 'deleteQuestion']);
 });
@@ -107,6 +103,11 @@ Route::get('/show-pdf-medische', function () {
 
 Route::get('/activiteiten', [ActiviteitController::class, 'showActiviteiten']);
 Route::get('/activiteiten/{groep}', [ActiviteitController::class, 'showActiviteiten']);
+Route::put('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
+Route::post('/create-activiteit', [ActiviteitController::class, 'createActiviteit']);
+Route::delete('/delete-activiteit', [ActiviteitController::class, 'deleteActiviteit']);
+Route::put('/update-activiteit', [ActiviteitController::class, 'updateActiviteit']);
+
 
 Route::post('/create-question', [QuestionController::class, 'createQuestion']);
 
