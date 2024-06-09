@@ -7,6 +7,8 @@
   <!-- Tailwind css  --> 
   @vite(['resources/css/app.css','resources/js/app.js'])
 
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
 </head>
 <body>
   <nav class=" border-gray-200 bg-greenNav">
@@ -26,21 +28,36 @@
       </a>
       @endif
         
-        <div class="flex justify-end">
-          <div class="relative inline-block text-left">
+      <div class="flex justify-end" x-data="{ open: false }">
+        <div class="relative inline-block text-left">
             <div>
-              <button type="button" class="md:hidden inline-flex justify-center w-full rounded-md hover:border-2 hover:border-redKLJ px-4 py-2 bg-redKLJ text-sm font-medium text-white hover:bg-greenNav focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-redKLJ focus:ring-redKLJ" id="options-menu" aria-haspopup="true" aria-expanded="true">
-                Menu
-                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </button>
+                <button @click="open = !open" type="button" class="md:hidden inline-flex justify-center w-full rounded-md hover:border-2 hover:border-redKLJ px-4 py-2 bg-redKLJ text-sm font-medium text-white hover:bg-greenNav focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-redKLJ focus:ring-redKLJ" id="options-menu" aria-haspopup="true" :aria-expanded="open">
+                    Menu
+                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
-        
-        
-            
-          </div>
+            <!-- Dropdown menu, show/hide based on menu state. -->
+            <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <div class="py-1" role="none">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Toevoegen</a>
+                    <a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ" role="menuitem">Activiteiten</a>
+                    <a href="../groepen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Groepen</a>
+                    <a href="../kamp" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Kamp</a>
+                    <a href="../inschrijven" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Inschrijven</a>
+                    <a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a>
+                    <a href="../contact" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Contact</a>
+                    <a href="../kamp" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Documenten</a>
+                    <a href="../kamp" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Vragen</a>
+
+
+                  </div>
+            </div>
         </div>
+    </div>
+  
         
     </div>
     @if(Auth::check())

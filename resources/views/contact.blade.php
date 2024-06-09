@@ -18,7 +18,7 @@
     <div class=" text-gray-700 ml-24">
         <div class="text-2xl text-redKLJ"><b>CONTACT US</b></div>
         <div class="text-base"> Heb je een vraag? Wil je graag iets weten? Of ben je gewoon nieuwsgierig? <br>
-            Stuur dan zeker een berichtje naar ons <a href="mailto:kljmeisjeshamont@gmail.com">e-mailadres</a>!
+            Stuur dan zeker een berichtje naar ons <a href="mailto:kljmeisjeshamont@gmail.com" class="underline">e-mailadres</a>!
             Of vul onderstaande form in. 
             <p>Indien je wenst is het mogelijk om telefonisch contact op te nemen met de hoofdleiding.</p>
             <div class="nummers">
